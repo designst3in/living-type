@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioMarkers — 3D-Native Organic Fiducial & Vascular Typography Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Cormorant+Garamond:ital,wght@0,700;1,600;1,700&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Rubik+Spray+Paint&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== GLOBAL TOP HEADER ==================== -->
+  <header class="app-header">
+    <div class="brand-cluster">
+      <div class="brand-mark" title="BioMarkers 3D-Native Harness">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#33ff66" stroke-width="2">
+          <circle cx="12" cy="12" r="9" stroke-opacity="0.85"/>
+          <circle cx="12" cy="12" r="4.5" stroke="#f5e6a8"/>
+          <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" stroke="#38bdf8" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">
+          BioMarkers
+          <span class="brand-badge">3D-NATIVE HARNESS</span><a href="https://biotype.pages.dev/markers" target="_blank" class="brand-badge" style="background: rgba(56,189,248,0.14); color: #38bdf8; border-color: rgba(56,189,248,0.4); text-decoration: none;">biotype.pages.dev/markers</a>
+        </div>
+        <div class="brand-subtitle">100% Organic Chambered-Loop Fiducials · VisionDial V2 · 3D AR Sheet · Path-Font Typography</div>
+      </div>
+    </div>
+
+    <!-- Primary Lab Switcher Tabs -->
+    <nav class="main-tabs" role="tablist" aria-label="BioMarkers Studios">
+      <button class="tab-btn active" data-tab="makerlab" role="tab" aria-selected="true">
+        <span class="tab-num">01</span>
+        MakerLab &amp; Live Trackability
+      </button>
+      <button class="tab-btn" data-tab="ar-sheet" role="tab" aria-selected="false">
+        <span class="tab-num">02</span>
+        3D Bent-Paper AR Lab
+      </button>
+      <button class="tab-btn" data-tab="path-font" role="tab" aria-selected="false">
+        <span class="tab-num">03</span>
+        Path-Font Vein Jig ("Life Finds A Way")
+      </button>
+    </nav>
+
+    <!-- Global 2D / 3D Harness View Toggle (Default: 2D) -->
+    <div class="header-actions">
+      <div class="harness-pill-group" title="window.BioMarkersHarness unified 3D node & edge model">
+        <span class="harness-label">
+          <span class="harness-dot"></span>
+          Harness View:
+        </span>
+        <div class="view-toggle-group" role="group" aria-label="Global 2D / 3D Harness View Toggle">
+          <button type="button" id="btn-mode-2d" class="view-mode-btn active" data-view-mode="2D">2D Ortho</button>
+          <button type="button" id="btn-mode-3d" class="view-mode-btn" data-view-mode="3D">3D Orbit</button>
+        </div>
+        <span id="global-harness-stats" class="harness-stats-badge">584 nodes · 812 edges · Z-active</span>
+      </div>
+
+      <button type="button" id="btn-export-harness" class="action-btn accent-cyan" title="Download window.BioMarkersHarness 3D nodes[] and edges[] JSON">
+        3D JSON
+      </button>
+      <a href="BioMarkers-A4-Print-Suite.pdf" target="_blank" class="action-btn primary" title="Open 6-Page A4 B&W Print Test Suite PDF">
+        A4 Print Suite PDF
+      </a>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       TAB 1: MAKERLAB — INTERACTIVE ORGANIC MARKER SUITE + LIVE TRACKABILITY
+       ===================================================================== -->
+  <main id="tab-makerlab" class="tab-panel active" role="tabpanel">
+
+    <!-- Top Hero Bar: Organic-to-Readable Continuum Slider + Live Telemetry KPIs -->
+    <section class="continuum-hero-bar">
+      <div class="continuum-slider-block">
+        <div class="continuum-header-row">
+          <div class="continuum-title">
+            <span>Organic-to-Readable Continuum (`organicToReadable`)</span>
+            <span id="val-organic-continuum" class="continuum-val-pill">0.62 · Anastomosing Veins + M-Seq31 Septa</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--bio-amber);">
+            Lock Break Threshold @ Tilt/Occlusion: <strong>0.28</strong>
+          </span>
+        </div>
+
+        <div class="continuum-track-wrap">
+          <input
+            type="range"
+            id="ctrl-organic-to-readable"
+            class="continuum-range"
+            min="0.00"
+            max="1.00"
+            step="0.01"
+            value="0.62"
+          />
+          <div class="continuum-stops">
+            <button type="button" class="stop-chip" data-continuum-stop="0.00">0.00 Raw Cellular Loop</button>
+            <button type="button" class="stop-chip break-stop" data-continuum-stop="0.24">0.24 Pre-Break (Fails)</button>
+            <button type="button" class="stop-chip break-stop" data-continuum-stop="0.28">0.28 Break Boundary</button>
+            <button type="button" class="stop-chip" data-continuum-stop="0.35">0.35 +M-Seq31 Septa</button>
+            <button type="button" class="stop-chip" data-continuum-stop="0.62">0.62 +Anastomosing Veins</button>
+            <button type="button" class="stop-chip" data-continuum-stop="1.00">1.00 +Dual Contrast Rim</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live VisionDial V2 Telemetry KPI Bar -->
+      <div class="telemetry-kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">VisionDial Lock</span>
+          <div><span id="kpi-lock-badge" class="lock-badge locked">LOCKED (ROCK SOLID)</span></div>
+          <span id="kpi-lock-reason" class="kpi-sub">16/16 sectors above floor</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Polar Ambiguity</span>
+          <span id="kpi-ambiguity" class="kpi-value" style="color: var(--bio-green);">0.0114</span>
+          <span id="kpi-ambiguity-sub" class="kpi-sub">secondPeak/main (&lt;0.035)</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Angular RMS Error</span>
+          <span id="kpi-rms" class="kpi-value" style="color: var(--bio-cyan);">0.078°</span>
+          <span id="kpi-rms-sub" class="kpi-sub">1€ Filtered: 0.049°</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Ellipse Inlier Ratio</span>
+          <span id="kpi-inliers" class="kpi-value">86.1%</span>
+          <span id="kpi-inliers-sub" class="kpi-sub">31/36 Tukey rays locked</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Pose + ZNCC Latency</span>
+          <span id="kpi-latency" class="kpi-value" style="color: var(--bio-cream);">0.84 ms</span>
+          <span id="kpi-latency-sub" class="kpi-sub">1€ lag: 6.8 ms @ 60fps</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- LIVE WEBCAM MARKER TRACKER + 3D POSE WIREFRAME + LIVE BIO-GROWTH BENCH -->
+    <section class="panel-card" id="webcam-test-bench" style="margin-bottom: 16px; border: 1.5px solid rgba(51, 255, 102, 0.45); background: linear-gradient(180deg, #0d161e 0%, #090d14 100%); box-shadow: 0 10px 30px rgba(0,0,0,0.45);">
+      <div class="panel-header" style="background: rgba(51, 255, 102, 0.07); border-bottom: 1px solid rgba(51, 255, 102, 0.25); flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span class="panel-title" style="color: #33ff66; font-size: 13.5px;">
+            📷 Live Webcam Marker &amp; Bio-Growth Test Bench (Hold Phone Marker to Camera)
+          </span>
+          <span id="webcam-status-pill" class="continuum-val-pill" style="background: rgba(56, 189, 248, 0.16); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+            LIVE SIMULATED PHONE FEED ACTIVE (60 FPS)
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button type="button" id="btn-webcam-start" class="action-btn primary" style="font-size: 12.5px; padding: 7px 14px;">
+            📷 Start Live Webcam Tracking
+          </button>
+          <button type="button" id="btn-webcam-sim" class="action-btn accent-cyan" style="font-size: 12.5px; padding: 7px 13px;">
+            🧪 Simulate Phone Marker in Hand (No Cam Needed)
+          </button>
+          <button type="button" id="btn-phone-fullscreen" class="action-btn" style="border-color: var(--bio-cream); color: var(--bio-cream); font-size: 12.5px; padding: 7px 13px;">
+            📱 Fullscreen Marker for Phone
+          </button>
+        </div>
+      </div>
+
+      <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: rgba(9, 13, 19, 0.65);">
+        <div class="checkbox-row" style="gap: 16px; font-size: 12px; color: var(--text-main);">
+          <label><input type="checkbox" id="chk-webcam-wireframe" checked /> <strong>Show 3D Detected Pose Wireframe</strong> (Ellipse + 6-DoF Frustum Cage + Normal Axis + 16-Sector Lock)</label>
+          <label><input type="checkbox" id="chk-webcam-biogrowth" checked /> <strong>Live Bio-Growth on Tracked Object</strong> (Voronoi + Cellular Veins Sprouting in 3D Pose Space)</label>
+          <label><input type="checkbox" id="chk-webcam-hud" checked /> <strong>Show Angle &amp; Jitter Telemetry HUD</strong></label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <label for="ctrl-webcam-biostyle" style="font-family: var(--font-mono); font-size: 11px; color: var(--bio-cream);">Bio-Growth Style:</label>
+          <select id="ctrl-webcam-biostyle" class="std-select" style="width: auto; min-width: 250px; padding: 5px 10px; font-size: 12px;">
+            <option value="plant">plant — Slow Plant Parenchyma + Leaf Veins (0.45×)</option>
+            <option value="vascular" selected>vascular — Organic Chambered Vacuoles + Cross-Stripes (1.25×)</option>
+            <option value="chaotic">chaotic — Fast Chaotic Physarum / RD Tendrils (2.8×)</option>
+          </select>
+          <button type="button" id="btn-webcam-regrow" class="preset-pill" title="Re-seed live bio-growth colony on tracked marker">🌱 Re-Sprout Bio-Growth</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.35fr 1fr; gap: 14px; padding: 14px; align-items: stretch;">
+        <div style="position: relative; background: #05070b; border: 1px solid var(--border-strong); border-radius: var(--radius-md); overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 360px;">
+          <video id="webcam-video" playsinline muted style="display:none;"></video>
+          <canvas id="webcam-AR-canvas" width="760" height="440" style="width: 100%; height: auto; display: block; cursor: crosshair;"></canvas>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 10px; background: var(--bg-input); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 12px 14px;">
+          <div>
+            <div class="section-subtitle" style="margin-bottom: 6px;">How to Test Live with Your Phone + Mac Webcam</div>
+            <ol style="padding-left: 18px; font-size: 12px; color: var(--text-muted); line-height: 1.55;">
+              <li>Open <strong style="color: var(--bio-cyan);">https://designst3in.github.io/living-type/markers/</strong> (or <strong style="color: var(--bio-green);">biotype/markers</strong>) on your phone and tap <strong>📱 Fullscreen Marker for Phone</strong>.</li>
+              <li>On your laptop/desktop, click <strong>📷 Start Live Webcam Tracking</strong> and hold your phone screen in front of the camera — tilt it, rotate it like a dial, or cover up to 45% with your fingers!</li>
+              <li>Or click <strong>🧪 Simulate Phone Marker in Hand</strong> to test the full 60fps VisionDial V2 detector + 3D Pose Wireframe + 3D Pose-Locked Bio-Growth immediately without a camera.</li>
+            </ol>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+            <div class="kpi-card">
+              <span class="kpi-label">Detected 3D Pose Normal</span>
+              <span id="webcam-kpi-pose" class="kpi-value" style="font-size: 13px; color: var(--bio-cyan);">tilt 26.4° · φ +18°</span>
+              <span id="webcam-kpi-normal" class="kpi-sub">n = (0.38, -0.21, 0.90)</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Decoded Dial Angle θ</span>
+              <span id="webcam-kpi-angle" class="kpi-value" style="font-size: 13px; color: var(--bio-green);">+142.6° (ω +18°/s)</span>
+              <span id="webcam-kpi-sectors" class="kpi-sub">13/16 clean sectors</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Live Colony Biomass</span>
+              <span id="webcam-kpi-biomass" class="kpi-value" style="font-size: 13px; color: var(--bio-cream);">48 chambers · 112 veins</span>
+              <span class="kpi-sub">Anchored in 3D marker frame</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Stage Luma &amp; Contrast</span>
+              <span id="webcam-kpi-luma" class="kpi-value" style="font-size: 13px; color: var(--bio-amber);">0.65·maxRGB + 0.35·Y</span>
+              <span id="webcam-kpi-fps" class="kpi-sub">60.0 fps · ZNCC 0.984</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Column MakerLab Workbench -->
+    <div class="workbench-grid">
+
+      <!-- LEFT COLUMN: Marker Role, Path-Font Hybrid Blending & Accuracy Knobs -->
+      <aside class="panel-card">
+        <div class="panel-header">
+          <span class="panel-title">Morphology &amp; Accuracy Knobs</span>
+          <button type="button" id="btn-reset-maker" class="preset-pill" title="Reset MakerLab knobs to optimal defaults">Reset</button>
+        </div>
+
+        <div class="panel-body">
+          <!-- Auto-Grow Live Trackability Optimizer -->
+          <div class="control-section">
+            <button type="button" id="btn-auto-grow" class="action-btn primary" style="width: 100%; justify-content: center; padding: 9px 12px; font-size: 12.5px;">
+              🌱 Grow &amp; Optimize Trackability Live
+            </button>
+            <div id="auto-grow-status" style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-align: center;">
+              Seeds organic chambers &amp; sprouts reinforcing septa in weak ZNCC sectors until ambiguity &lt; 0.020
+            </div>
+          </div>
+
+          <!-- Marker Role / Scale & Morphology Selector -->
+          <div class="control-section">
+            <div class="section-subtitle">1. Marker Role / Scale &amp; Morphology</div>
+            <div class="control-row">
+              <select id="ctrl-marker-role" class="std-select">
+                <option value="standard-38mm" selected>Standard Rotational Dial (38 mm)</option>
+                <option value="corner-12mm">Small Corner Marker (12 mm L-Organelle)</option>
+                <option value="long-110mm">Large Long-Distance Marker (110 mm Dual-Scale @ 3m)</option>
+                <option value="square-4fold">Organic Square Fiducial (4-Fold Asymmetric)</option>
+                <option value="triangle-3fold">Organic Triangle Fiducial (3-Fold Apical)</option>
+                <option value="radial-gradient">Radial Density Gradient (Dense Core → Tendrils)</option>
+                <option value="full-a4-rd">Full-A4 RD Fingerprint Target</option>
+              </select>
+            </div>
+            <div id="role-desc-box" style="font-size: 11px; color: var(--text-muted); background: var(--bg-input); padding: 7px 9px; border-radius: 5px; border: 1px solid var(--border-subtle);">
+              38 mm Ortho Remote / studio knob fiducial: 17 hollow sausage-link vacuoles + 31-bit m-sequence internal septa + anastomosing inter-chamber veins.
+            </div>
+          </div>
+
+          <!-- Hybrid Path-Font Text / Number Blending -->
+          <div class="control-section">
+            <div class="section-subtitle">2. Organic Path-Font Text Blending</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-label-text">Label Text (Human + Machine Signature)</label>
+                <span class="control-val" id="val-label-text">"01"</span>
+              </div>
+              <input type="text" id="ctrl-label-text" class="std-input" value="01" maxlength="10" />
+            </div>
+            <div class="preset-pills" id="label-preset-pills">
+              <button type="button" class="preset-pill active" data-label-preset="01">"01"</button>
+              <button type="button" class="preset-pill" data-label-preset="A4">"A4"</button>
+              <button type="button" class="preset-pill" data-label-preset="GAIN">"GAIN"</button>
+              <button type="button" class="preset-pill" data-label-preset="CUT-2">"CUT-2"</button>
+              <button type="button" class="preset-pill" data-label-preset="CAM-A">"CAM-A"</button>
+              <button type="button" class="preset-pill" data-label-preset="LIFE">"LIFE"</button>
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-label-placement">Label Placement</label>
+              </div>
+              <select id="ctrl-label-placement" class="std-select">
+                <option value="inner-core" selected>Inner Core (Central Vascular Stalk)</option>
+                <option value="edge-arc">Edge Arc (Integrated into Chamber Ring)</option>
+                <option value="corner-tag">Corner Tag (Peripheral Organelle Satellite)</option>
+              </select>
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-text-blend">Organic Text Blend (Path → Vacuoles+Veins)</label>
+                <span class="control-val" id="val-text-blend">0.72</span>
+              </div>
+              <input type="range" id="ctrl-text-blend" class="std-range" min="0.00" max="1.00" step="0.02" value="0.72" />
+            </div>
+          </div>
+
+          <!-- Biological Chamber & Vein Geometry Knobs -->
+          <div class="control-section">
+            <div class="section-subtitle">3. Cellular Chambers, Septa &amp; Veins</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-chambers">Chamber Count</label>
+                <span class="control-val" id="val-chambers">17</span>
+              </div>
+              <input type="range" id="ctrl-chambers" class="std-range" min="7" max="24" step="1" value="17" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-septa-density">Septa Density / M-Seq31 Weight</label>
+                <span class="control-val" id="val-septa-density">0.78</span>
+              </div>
+              <input type="range" id="ctrl-septa-density" class="std-range" min="0.00" max="1.00" step="0.02" value="0.78" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-vein-branching">Anastomosing Vein Branching</label>
+                <span class="control-val" id="val-vein-branching">0.72</span>
+              </div>
+              <input type="range" id="ctrl-vein-branching" class="std-range" min="0.00" max="1.00" step="0.02" value="0.72" />
+            </div>
+          </div>
+
+          <!-- VisionDial Polar Sampler & Camera Stress Knobs -->
+          <div class="control-section">
+            <div class="section-subtitle">4. VisionDial Matcher &amp; Camera Optics</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-polar-angles">Polar Angular Bins</label>
+                <span class="control-val" id="val-polar-angles">180</span>
+              </div>
+              <input type="range" id="ctrl-polar-angles" class="std-range" min="64" max="512" step="4" value="180" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-radial-rings">Radial Rings</label>
+                <span class="control-val" id="val-radial-rings">10</span>
+              </div>
+              <input type="range" id="ctrl-radial-rings" class="std-range" min="4" max="24" step="1" value="10" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-occ-sectors">Occlusion Sectors</label>
+                <span class="control-val" id="val-occ-sectors">16</span>
+              </div>
+              <input type="range" id="ctrl-occ-sectors" class="std-range" min="8" max="32" step="2" value="16" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-mask-thresh">Sector Mask Threshold</label>
+                <span class="control-val" id="val-mask-thresh">0.30</span>
+              </div>
+              <input type="range" id="ctrl-mask-thresh" class="std-range" min="0.15" max="0.60" step="0.01" value="0.30" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-cam-dist">Camera Distance (Optical PSF Blur)</label>
+                <span class="control-val" id="val-cam-dist">0.65 m</span>
+              </div>
+              <input type="range" id="ctrl-cam-dist" class="std-range" min="0.20" max="4.00" step="0.05" value="0.65" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-cam-tilt">Camera Tilt Angle (Foreshortening)</label>
+                <span class="control-val" id="val-cam-tilt">35°</span>
+              </div>
+              <input type="range" id="ctrl-cam-tilt" class="std-range" min="0" max="55" step="1" value="35" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-hand-occ">Hand / Finger Occlusion</label>
+                <span class="control-val" id="val-hand-occ">40%</span>
+              </div>
+              <input type="range" id="ctrl-hand-occ" class="std-range" min="0" max="65" step="1" value="40" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-euro-cutoff">1€ Filter Min Cutoff (Hz)</label>
+                <span class="control-val" id="val-euro-cutoff">1.0 Hz</span>
+              </div>
+              <input type="range" id="ctrl-euro-cutoff" class="std-range" min="0.2" max="5.0" step="0.1" value="1.0" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-euro-beta">1€ Filter Speed Beta</label>
+                <span class="control-val" id="val-euro-beta">3.5</span>
+              </div>
+              <input type="range" id="ctrl-euro-beta" class="std-range" min="0.1" max="8.0" step="0.1" value="3.5" />
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER COLUMN: Interactive 2D / 3D Marker Harness Viewport -->
+      <section class="panel-card">
+        <div class="viewport-toolbar">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span class="panel-title">MakerLab Viewport</span>
+            <!-- Prominent MakerLab 2D / 3D Harness Toggle (Default: 2D) -->
+            <div class="view-toggle-group" role="group" aria-label="MakerLab 2D / 3D Harness Toggle">
+              <button type="button" class="view-mode-btn active" data-view-mode="2D">2D Print / Ortho (Default)</button>
+              <button type="button" class="view-mode-btn" data-view-mode="3D">3D Perspective Harness</button>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <label><input type="checkbox" id="chk-show-harness" /> 2D Harness Overlay</label>
+            <label><input type="checkbox" id="chk-show-normals" checked /> 3D Normals</label>
+            <label><input type="checkbox" id="chk-invert-bw" /> Invert Print (Black on White)</label>
+            <button type="button" id="btn-reset-camera" class="preset-pill">Reset 3D Orbit</button>
+            <button type="button" id="btn-export-svg" class="preset-pill">Export SVG</button>
+            <button type="button" id="btn-export-png" class="preset-pill">Export PNG</button>
+          </div>
+        </div>
+
+        <div class="canvas-stage-wrap">
+          <canvas id="maker-main-canvas" class="main-canvas" width="760" height="760"></canvas>
+
+          <div class="canvas-hud-overlay">
+            <div id="maker-hud-left" class="hud-pill">
+              Mode: <strong style="color: var(--bio-green);">2D Orthographic</strong> · Hover or drag in 3D mode to inspect `{x,y,z,nx,ny,nz}`
+            </div>
+            <div id="maker-hud-node" class="hud-pill" style="color: var(--bio-cyan);">
+              Node #0 · role: chamber-center · z: +2.84mm · septaBit: 1
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference Comparison Strip inside Center Panel -->
+        <div style="padding: 12px 14px; border-top: 1px solid var(--border-subtle); background: #0a0d14;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span class="section-subtitle">Reference Master Sheet (`organic-marker-sheet.png` &amp; `hybrid-organic-veins.svg`)</span>
+            <a href="assets/markers/hybrid-organic-veins.svg" target="_blank" style="font-family: var(--font-mono); font-size: 11px; color: var(--bio-green);">Open Master Vector SVG ↗</a>
+          </div>
+          <img src="assets/markers/organic-marker-sheet.png" alt="Protozoa Organic Vein & Septa Fiducial Marker Sheet" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-subtle);" />
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: "Watch Where Lock Breaks" Live VisionDial Diagnostics -->
+      <aside class="panel-card">
+        <div class="panel-header">
+          <span class="panel-title">VisionDial V2 Live Telemetry</span>
+          <span style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-green);">Real-Time JS Solver</span>
+        </div>
+
+        <div class="panel-body">
+          <!-- Chart 1: Watch Where Lock Breaks Curve -->
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">A. "Watch Where Lock Breaks" Continuum Curve</span>
+              <span id="lbl-break-status" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-amber);">Break @ 0.28</span>
+            </div>
+            <canvas id="diag-continuum-canvas" class="diag-canvas" width="420" height="175"></canvas>
+          </div>
+
+          <!-- Chart 2: Simulated Off-Axis Camera + 36-Ray Tukey-Biweight Ellipse Fit -->
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">B. Simulated Camera + 36-Ray Tukey Ellipse Fit</span>
+              <span id="lbl-cam-pose" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-cyan);">ry/rx = 0.819</span>
+            </div>
+            <canvas id="diag-camera-canvas" class="diag-canvas" width="420" height="200"></canvas>
+          </div>
+
+          <!-- Chart 3: 16-Sector Masked Polar Unroll -->
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">C. Elliptical Polar Unroll &amp; Sector Occlusion Mask</span>
+              <span id="lbl-sector-mask" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-purple);">10/16 active</span>
+            </div>
+            <canvas id="diag-polar-canvas" class="diag-canvas" width="420" height="135"></canvas>
+          </div>
+
+          <!-- Chart 4: 360° ZNCC Autocorrelation & Sidelobe Peak -->
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">D. 360° Circular ZNCC Correlation (`-180°..+180°`)</span>
+              <span id="lbl-zncc-peak" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-green);">Peak 0.992</span>
+            </div>
+            <canvas id="diag-zncc-canvas" class="diag-canvas" width="420" height="155"></canvas>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- BOTTOM DRAWER: Embedded A4 B&W Print Test Suite (Pages 1–6 + PDF) -->
+    <section class="print-suite-drawer">
+      <div class="panel-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="panel-title">📄 Embedded A4 B&amp;W Print Test Suite Gallery (Pages 1–6)</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">300 DPI Vector/Raster Calibration Target Suite · Ready for Matte Laser/Inkjet Print</span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" id="btn-print-current-page" class="action-btn">🖨️ Print Selected A4 Sheet</button>
+          <a href="BioMarkers-A4-Print-Suite.pdf" download="BioMarkers-A4-Print-Suite.pdf" class="action-btn primary">⬇ Download Full 6-Page PDF (`BioMarkers-A4-Print-Suite.pdf`)</a>
+        </div>
+      </div>
+
+      <div class="print-suite-grid">
+        <div class="page-selector-list" id="pdf-page-selector">
+          <button type="button" class="page-select-btn active" data-page="1">
+            <div class="p-num">PAGE 01 / 06</div>
+            <div class="p-title">Organic-to-Readable Continuum Calibration Sheet</div>
+            <div class="p-desc">6 markers spanning 0.00 Raw Loop → 1.00 Dual Rim + Break-Point Verification Grid</div>
+          </button>
+          <button type="button" class="page-select-btn" data-page="2">
+            <div class="p-num">PAGE 02 / 06</div>
+            <div class="p-title">Multi-Scale Fiducial Morphology Suite (12mm – 110mm)</div>
+            <div class="p-desc">Small Corner L-Organelles, 38mm Ortho Dials, 110mm 3m Long-Range, Square &amp; Triangle</div>
+          </button>
+          <button type="button" class="page-select-btn" data-page="3">
+            <div class="p-num">PAGE 03 / 06</div>
+            <div class="p-title">Hybrid Path-Font Human + Machine Labelled Dials</div>
+            <div class="p-desc">Cut-out studio knob stickers ("01", "A4", "GAIN", "CUT-2", "CAM-A", "LIFE")</div>
+          </button>
+          <button type="button" class="page-select-btn" data-page="4">
+            <div class="p-num">PAGE 04 / 06</div>
+            <div class="p-title">Full-A4 Reaction-Diffusion 3D Surface Fingerprint Target</div>
+            <div class="p-desc">8 Organic Perimeter Fiducials + Isotropic Turing Carrier (f₀ = 0.25 c/mm) for 3D Bend Reconstruction</div>
+          </button>
+          <button type="button" class="page-select-btn" data-page="5">
+            <div class="p-num">PAGE 05 / 06</div>
+            <div class="p-title">Occlusion, Oblique Tilt &amp; Distance PSF Stress Target</div>
+            <div class="p-desc">Pre-masked 35%–60% occlusion sectors + foreshortened ellipse verification targets</div>
+          </button>
+          <button type="button" class="page-select-btn" data-page="6">
+            <div class="p-num">PAGE 06 / 06</div>
+            <div class="p-title">"Life Finds A Way" Path-Font Vein-Skeleton Specimen Sheet</div>
+            <div class="p-desc">High-contrast B&amp;W calligraphic vascular skeleton + chambered vacuoles + septa rungs</div>
+          </button>
+        </div>
+
+        <div class="page-preview-stage">
+          <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+            <span id="pdf-preview-caption" style="font-family: var(--font-mono); font-size: 12px; color: var(--bio-cream);">
+              Page 1: Organic-to-Readable Continuum Calibration Sheet (A4 210 × 297 mm)
+            </span>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" id="btn-toggle-pdf-embed" class="preset-pill">Toggle Native PDF Embed</button>
+              <button type="button" id="btn-download-page-png" class="preset-pill">Download Page PNG</button>
+            </div>
+          </div>
+
+          <canvas id="pdf-page-canvas" class="page-preview-canvas" width="794" height="1123"></canvas>
+          <iframe id="pdf-native-iframe" src="BioMarkers-A4-Print-Suite.pdf#page=1" style="display: none; width: 100%; height: 740px; border: 1px solid var(--border-strong); border-radius: 6px; background: #fff;" title="BioMarkers A4 Print Suite PDF"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       TAB 2: 3D BENT-PAPER AR RECONSTRUCTION LAB
+       ===================================================================== -->
+  <section id="tab-ar-sheet" class="tab-panel" role="tabpanel">
+    <div class="continuum-hero-bar">
+      <div>
+        <div class="continuum-title">
+          <span>Full-A4 Reaction-Diffusion 3D Bent-Paper AR Reconstruction Lab</span>
+          <span class="continuum-val-pill" id="ar-mode-pill">Corner Peel + Page Curl · Shared 3D Harness</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 5px;">
+          Recovers full 3D non-rigid paper geometry $Z_{\text{est}}(x,y)$ in mm from a single camera frame: (1) locks 8 organic perimeter fiducials, (2) measures local Turing stripe wavelength foreshortening $f_{\text{obs}} = f_0 / \cos\theta$ and phase shift $\Delta\mathbf{u}(x,y)$, and (3) solves Poisson surface elevation in `window.BioMarkersHarness`.
+        </p>
+      </div>
+
+      <div class="telemetry-kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">Perimeter Fiducials</span>
+          <span id="ar-kpi-fiducials" class="kpi-value" style="color: var(--bio-green);">8 / 8 Locked</span>
+          <span class="kpi-sub">4 L-Corner + 4 Mid-Edge</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">3D Surface RMSE</span>
+          <span id="ar-kpi-rmse" class="kpi-value" style="color: var(--bio-cyan);">0.94 mm</span>
+          <span class="kpi-sub">Target: 0.8–1.4 mm</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Max Peak Bend Z</span>
+          <span id="ar-kpi-maxz" class="kpi-value" style="color: var(--bio-cream);">24.0 mm</span>
+          <span class="kpi-sub" id="ar-kpi-p95">P95 err: 1.62 mm</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Mean Normal Error</span>
+          <span id="ar-kpi-norm-err" class="kpi-value">1.84°</span>
+          <span class="kpi-sub">From f_obs = f₀/cos θ</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Poisson Solver</span>
+          <span id="ar-kpi-time" class="kpi-value" style="color: var(--bio-green);">2.4 ms</span>
+          <span class="kpi-sub">Grid: 16×22 (352 verts)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="workbench-grid">
+      <!-- LEFT COLUMN: 3D Sheet Deformation & Solver Controls -->
+      <aside class="panel-card">
+        <div class="panel-header">
+          <span class="panel-title">A4 Sheet Deformation Controls</span>
+          <button type="button" id="btn-ar-reset" class="preset-pill">Reset</button>
+        </div>
+        <div class="panel-body">
+          <div class="control-section">
+            <div class="section-subtitle">1. Deformation Preset</div>
+            <div class="preset-pills" id="ar-preset-pills">
+              <button type="button" class="preset-pill active" data-ar-preset="peel">Corner Peel (28mm)</button>
+              <button type="button" class="preset-pill" data-ar-preset="curl">Cylindrical Curl</button>
+              <button type="button" class="preset-pill" data-ar-preset="saddle">Saddle Wave</button>
+              <button type="button" class="preset-pill" data-ar-preset="crease">Diagonal Crease</button>
+              <button type="button" class="preset-pill" data-ar-preset="combo">Combined Warp</button>
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">2. Non-Rigid Bend Amplitudes (mm)</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-peel">Corner Peel (Top-Right Lift)</label>
+                <span class="control-val" id="val-ar-peel">28.0 mm</span>
+              </div>
+              <input type="range" id="ctrl-ar-peel" class="std-range" min="0" max="40" step="0.5" value="28.0" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-curl">Page Curl (Longitudinal Arch)</label>
+                <span class="control-val" id="val-ar-curl">10.0 mm</span>
+              </div>
+              <input type="range" id="ctrl-ar-curl" class="std-range" min="0" max="35" step="0.5" value="10.0" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-saddle">Saddle Wave Harmonic</label>
+                <span class="control-val" id="val-ar-saddle">6.0 mm</span>
+              </div>
+              <input type="range" id="ctrl-ar-saddle" class="std-range" min="0" max="25" step="0.5" value="6.0" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-crease">Diagonal Crease Ridge</label>
+                <span class="control-val" id="val-ar-crease">4.0 mm</span>
+              </div>
+              <input type="range" id="ctrl-ar-crease" class="std-range" min="0" max="30" step="0.5" value="4.0" />
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">3. Carrier &amp; Optical Parameters</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-freq">Turing Stripe Carrier f₀ (cycles/mm)</label>
+                <span class="control-val" id="val-ar-freq">0.25 c/mm</span>
+              </div>
+              <input type="range" id="ctrl-ar-freq" class="std-range" min="0.15" max="0.45" step="0.01" value="0.25" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-ar-noise">Camera Sensor Phase Noise</label>
+                <span class="control-val" id="val-ar-noise">0.08 rad</span>
+              </div>
+              <input type="range" id="ctrl-ar-noise" class="std-range" min="0.00" max="0.35" step="0.01" value="0.08" />
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">4. Custom Image / Webcam Inspector</div>
+            <input type="file" id="ctrl-ar-upload" accept="image/*" class="std-input" style="font-size: 11px;" />
+            <div id="ar-upload-status" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted);">
+              Or inspect live synthetic A4 sheet + `assets/ar-benchmark.json` below.
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER COLUMN: 2D / 3D Bent-Paper AR Reconstruction Canvas -->
+      <section class="panel-card">
+        <div class="viewport-toolbar">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span class="panel-title">A4 Reconstruction Viewport</span>
+            <div class="view-toggle-group" role="group" aria-label="AR Lab 2D / 3D Harness Toggle">
+              <button type="button" class="view-mode-btn active" data-view-mode="2D">2D Warped Sheet + Phase</button>
+              <button type="button" class="view-mode-btn" data-view-mode="3D">3D Reconstructed Mesh Z_est(x,y)</button>
+            </div>
+          </div>
+          <div class="checkbox-row">
+            <label><input type="checkbox" id="chk-ar-show-gt" checked /> Show Ground-Truth Wireframe</label>
+            <label><input type="checkbox" id="chk-ar-show-vectors" checked /> Show Δu(x,y) &amp; Normals</label>
+            <label><input type="checkbox" id="chk-ar-show-ar-cube" checked /> AR Calibration Dials</label>
+          </div>
+        </div>
+
+        <div class="canvas-stage-wrap">
+          <canvas id="ar-main-canvas" class="main-canvas" width="760" height="760"></canvas>
+          <div class="canvas-hud-overlay">
+            <div id="ar-hud-left" class="hud-pill">
+              Solver: <strong>8 Fiducials + Wavelet f_obs = f₀/cos θ + Δu Phase</strong>
+            </div>
+            <div id="ar-hud-right" class="hud-pill" style="color: var(--bio-green);">
+              Z_est vs Z_true RMSE: 0.94 mm
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: Foreshortening Spectrum, Residual Map & Benchmark JSON -->
+      <aside class="panel-card">
+        <div class="panel-header">
+          <span class="panel-title">3D Reconstruction Diagnostics</span>
+        </div>
+        <div class="panel-body">
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">A. Cross-Section Profile: Z_true(s) vs Z_est(s) (mm)</span>
+            </div>
+            <canvas id="ar-profile-canvas" class="diag-canvas" width="420" height="170"></canvas>
+          </div>
+
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">B. Local Wavelength Foreshortening (f_obs / f₀) &amp; Error Map</span>
+            </div>
+            <canvas id="ar-heatmap-canvas" class="diag-canvas" width="420" height="170"></canvas>
+          </div>
+
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">C. Benchmark Results (`assets/ar-benchmark.json`)</span>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="bench-table" id="ar-benchmark-table">
+                <thead>
+                  <tr>
+                    <th>Deformation</th>
+                    <th>Max Z</th>
+                    <th>RMSE</th>
+                    <th>Fiducials</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Corner Peel (30mm)</td><td>30.0 mm</td><td style="color: var(--bio-green);">0.89 mm</td><td>8/8</td></tr>
+                  <tr><td>Page Curl (25mm)</td><td>25.0 mm</td><td style="color: var(--bio-green);">0.82 mm</td><td>8/8</td></tr>
+                  <tr><td>Saddle Wave (18mm)</td><td>18.0 mm</td><td style="color: var(--bio-cyan);">1.12 mm</td><td>8/8</td></tr>
+                  <tr><td>Diagonal Crease</td><td>22.0 mm</td><td style="color: var(--bio-amber);">1.34 mm</td><td>8/8</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <div class="control-label-line" style="margin-bottom: 5px;">
+              <span class="section-subtitle">D. Verification Sheet (`ar-3d-bend-verification.png`)</span>
+            </div>
+            <img id="ar-verification-img" src="assets/pages/ar-3d-bend-verification.png" alt="3D Bent-Paper AR Verification" style="width: 100%; border-radius: 6px; border: 1px solid var(--border-subtle);" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       TAB 3: PATH-FONT VEIN-SKELETON TYPOGRAPHY JIG ("LIFE FINDS A WAY")
+       ===================================================================== -->
+  <section id="tab-path-font" class="tab-panel" role="tabpanel">
+    <div class="continuum-hero-bar">
+      <div>
+        <div class="continuum-title">
+          <span>Path-Font Vein-Skeleton Typography Jig — "Life Finds A Way" 4-Pass Studio</span>
+          <span class="continuum-val-pill" id="pf-pass-pill">Pass 2: Hybrid Cellular Biology (~28 ms)</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 5px;">
+          Single-stroke calligraphic centerline splines $P_i(s) = (x(s), y(s), z(s), r_0(s))$ with divergence-free curl-noise distortion, hollow cellular chambers, internal cross-stripe septa rungs, and cKDTree H-bridge anastomosing runner veins — rendered directly inside `window.BioMarkersHarness`.
+        </p>
+      </div>
+
+      <!-- 4-Pass Selector Buttons -->
+      <div class="preset-pills" id="pf-pass-selector" style="justify-content: flex-end;">
+        <button type="button" class="action-btn" data-pf-pass="0">Pass 0: B&amp;W Vein Skeleton</button>
+        <button type="button" class="action-btn" data-pf-pass="1">Pass 1: 3-Act Animated Growth</button>
+        <button type="button" class="action-btn primary" data-pf-pass="2">Pass 2: Hybrid Cellular Biology</button>
+        <button type="button" class="action-btn" data-pf-pass="3">Pass 3: Macro Zoom + Tilted CoC Rack</button>
+      </div>
+    </div>
+
+    <div class="workbench-grid">
+      <!-- LEFT COLUMN: Live Text Input & 6 Jig Knobs -->
+      <aside class="panel-card">
+        <div class="panel-header">
+          <span class="panel-title">Path-Font Jig Knobs</span>
+          <button type="button" id="btn-pf-animate" class="preset-pill active">▶ Play Growth Loop</button>
+        </div>
+        <div class="panel-body">
+                    <div class="control-section">
+            <div class="section-subtitle">1. Webby Voronoi Type Structure Mesh &amp; Per-Word Organic Fonts</div>
+            <input type="text" id="ctrl-pf-text" class="std-input" value="LIFE / finds a / WAY" maxlength="32" />
+            <div class="preset-pills" id="pf-text-presets">
+              <button type="button" class="preset-pill active" data-pf-text="LIFE / finds a / WAY">3-Tier: LIFE / finds a / WAY</button>
+              <button type="button" class="preset-pill" data-pf-text="PROTOZOA / grows / FREE">PROTOZOA / grows / FREE</button>
+              <button type="button" class="preset-pill" data-pf-text="BIOTYPE / markers / 01">BIOTYPE / markers / 01</button>
+            </div>
+
+            <div class="control-row" style="margin-top: 6px;">
+              <div class="control-label-line">
+                <label for="ctrl-font-life" style="color: var(--bio-green); font-weight: 600;">"LIFE" Font (0.45× Slow Plant Growth)</label>
+              </div>
+              <select id="ctrl-font-life" class="std-select">
+                <option value="Fraunces" selected>Fraunces Soft 900 (Heavy Botanical Display Serif)</option>
+                <option value="Syne">Syne ExtraBold 800 (Wide Fleshy Parenchyma Stems)</option>
+                <option value="Georgia">Georgia Bold (Classic Organic Serif)</option>
+              </select>
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-font-findsa" style="color: var(--bio-cream); font-weight: 600;">"finds a" Font (1.25× Vascular Growth)</label>
+              </div>
+              <select id="ctrl-font-findsa" class="std-select">
+                <option value="Cormorant Garamond" selected>Cormorant Garamond Italic (Flowing Calligraphic Hyphae)</option>
+                <option value="Fraunces Italic">Fraunces Italic (Organic Tendril Serif)</option>
+                <option value="Times New Roman">Times Italic (High-Contrast Vascular Serif)</option>
+              </select>
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-font-way" style="color: var(--bio-cyan); font-weight: 600;">"WAY" Font (2.8× Rapid Chaotic Growth)</label>
+              </div>
+              <select id="ctrl-font-way" class="std-select">
+                <option value="Barriecito" selected>Barriecito / Rubik Spray Paint (Irregular Naturalist Woodcut)</option>
+                <option value="Rubik Spray Paint">Rubik Spray Paint (Spore-Burst Mycelial Display)</option>
+                <option value="Syne">Syne 800 (Heavy Wide Foraging Trellis)</option>
+              </select>
+            </div>
+
+            <div style="font-size: 11px; color: var(--text-muted); background: var(--bg-input); padding: 8px 10px; border-radius: 5px; border: 1px solid var(--border-subtle); line-height: 1.45;">
+              <strong style="color: #fff;">Webby Voronoi Type Structure Mesh (Static/Elastic Trellis):</strong> Letterforms are tessellated into a non-animating elastic Voronoi structural mesh (`d_glyph &lt; 0` interior struts + `0..16px` webby cortical bridges).<br/>
+              <strong style="color: var(--bio-green);">• LIFE (0.45×):</strong> Slow turgid plant parenchyma cells + leaf veins<br/>
+              <strong style="color: var(--bio-cream);">• finds a (1.25×):</strong> Medium-fast chambered vascular vacuoles + cross-septa<br/>
+              <strong style="color: var(--bio-cyan);">• WAY (2.8×):</strong> Rapid chaotic Physarum tendrils &amp; anastomosing loops
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">1B. Interactive Brush-In Foraging Creatures</div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" id="btn-pf-spawn-swarm" class="action-btn primary" style="flex: 1; justify-content: center;">🦠 Brush / Spawn Foragers</button>
+              <button type="button" id="btn-pf-clear-creatures" class="action-btn">Clear</button>
+            </div>
+            <div id="pf-creature-status" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio-green);">
+              Click/drag on dish to brush in live chemotactic creatures that sense Voronoi letters as food &amp; colonise type!
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-way-speed">Tier 3 "WAY" &amp; Forager Speed Multiplier</label>
+                <span class="control-val" id="val-pf-way-speed">2.2×</span>
+              </div>
+              <input type="range" id="ctrl-pf-way-speed" class="std-range" min="1.0" max="3.2" step="0.1" value="2.2" />
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">2. Vascular &amp; Cellular Jig Parameters</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-warp">Curl-Noise Twist (`warpAmp`)</label>
+                <span class="control-val" id="val-pf-warp">18.0 px</span>
+              </div>
+              <input type="range" id="ctrl-pf-warp" class="std-range" min="0" max="45" step="0.5" value="18.0" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-legibility">Legibility Lock (Eaten Up ↔ Readable)</label>
+                <span class="control-val" id="val-pf-legibility">0.84 (u_warp=0.05)</span>
+              </div>
+              <input type="range" id="ctrl-pf-legibility" class="std-range" min="0.00" max="1.00" step="0.01" value="0.84" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-inflate">Chamber Inflation (`inflateRadius`)</label>
+                <span class="control-val" id="val-pf-inflate">7.5 px</span>
+              </div>
+              <input type="range" id="ctrl-pf-inflate" class="std-range" min="1.5" max="14.0" step="0.25" value="7.5" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-septa">Cross-Stripe Septa Rungs</label>
+                <span class="control-val" id="val-pf-septa">0.76</span>
+              </div>
+              <input type="range" id="ctrl-pf-septa" class="std-range" min="0.00" max="1.00" step="0.02" value="0.76" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-anastomosis">Anastomosis H-Bridges &amp; Loops</label>
+                <span class="control-val" id="val-pf-anastomosis">0.68</span>
+              </div>
+              <input type="range" id="ctrl-pf-anastomosis" class="std-range" min="0.00" max="1.00" step="0.02" value="0.68" />
+            </div>
+          </div>
+
+          <div class="control-section">
+            <div class="section-subtitle">3. Pass 1–3 Growth Timeline &amp; CoC Optics</div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-growth">3-Act Growth Time (`t = 0..10s`)</label>
+                <span class="control-val" id="val-pf-growth">8.8 s (Act III Way)</span>
+              </div>
+              <input type="range" id="ctrl-pf-growth" class="std-range" min="0.2" max="10.0" step="0.1" value="8.8" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-zoom">Macro Camera Zoom</label>
+                <span class="control-val" id="val-pf-zoom">1.15×</span>
+              </div>
+              <input type="range" id="ctrl-pf-zoom" class="std-range" min="0.85" max="2.20" step="0.05" value="1.15" />
+            </div>
+
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-tilt">Tilted CoC Focus Plane (`Pass 3`)</label>
+                <span class="control-val" id="val-pf-tilt">+0.52</span>
+              </div>
+              <input type="range" id="ctrl-pf-tilt" class="std-range" min="-1.00" max="1.00" step="0.02" value="0.52" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-cam-shake">Human Operator Pan Overshoot &amp; Shake</label>
+                <span class="control-val" id="val-pf-cam-shake">0.75</span>
+              </div>
+              <input type="range" id="ctrl-pf-cam-shake" class="std-range" min="0.00" max="1.50" step="0.05" value="0.75" />
+            </div>
+            <div class="control-row">
+              <div class="control-label-line">
+                <label for="ctrl-pf-focus-hunt">Focus-Knob Hunting / Focus Miss</label>
+                <span class="control-val" id="val-pf-focus-hunt">0.70</span>
+              </div>
+              <input type="range" id="ctrl-pf-focus-hunt" class="std-range" min="0.00" max="1.50" step="0.05" value="0.70" />
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER + RIGHT WIDE STAGE: Interactive Path-Font Canvas + 2D/3D Harness -->
+      <section class="panel-card" style="grid-column: span 2;">
+        <div class="viewport-toolbar">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span class="panel-title">Interactive Path-Font Vein-Skeleton Canvas</span>
+            <div class="view-toggle-group" role="group" aria-label="Path-Font 2D / 3D Harness Toggle">
+              <button type="button" class="view-mode-btn active" data-view-mode="2D">2D Microscopy Plane</button>
+              <button type="button" class="view-mode-btn" data-view-mode="3D">3D Vascular Skeleton Orbit</button>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <label><input type="checkbox" id="chk-pf-voronoi" checked /> Voronoi Cell Layout Grid</label>
+            <label><input type="checkbox" id="chk-pf-brush-mode" checked /> Brush-In Growth Creatures</label>
+            <label><input type="checkbox" id="chk-pf-human-cam" checked /> Human Operator Cam (`L` → `LIFE` → `finds a` → `WAY` → Full)</label>
+            <label><input type="checkbox" id="chk-pf-backbone" /> Centerline P_i(s)</label>
+            <label><input type="checkbox" id="chk-pf-vacuoles" checked /> Vacuoles + Septa</label>
+            <label><input type="checkbox" id="chk-pf-bokeh" checked /> Ring-Bokeh CoC</label>
+          </div>
+        </div>
+
+        <div class="canvas-stage-wrap" style="min-height: 490px;">
+          <canvas id="pf-main-canvas" class="wide-canvas" width="960" height="540"></canvas>
+          <div class="canvas-hud-overlay">
+            <div id="pf-hud-left" class="hud-pill">
+              Pass 2: Rheinberg `#f5e6a8` Arteries + `#d96b78` Counter-Scatter + `#33ff66` Bioluminescent Tips
+            </div>
+            <div id="pf-hud-right" class="hud-pill" style="color: var(--bio-cyan);">
+              3D Harness: 682 path/vein nodes · 940 edges
+            </div>
+          </div>
+        </div>
+
+        <!-- Synchronized Video & Still Players from /assets/life-finds-a-way/ -->
+        <div style="padding: 16px; border-top: 1px solid var(--border-subtle); background: #090c12;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="panel-title">🎬 Synchronized 4-Pass Rendered Video &amp; Storyboard Gallery (`assets/life-finds-a-way/`)</span>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" id="btn-sync-videos-play" class="action-btn primary">▶ Play &amp; Sync All 4 Passes</button>
+              <button type="button" id="btn-sync-videos-pause" class="action-btn">⏸ Pause All</button>
+            </div>
+          </div>
+
+          <div class="media-gallery-grid">
+            <div class="media-card">
+              <video class="sync-pass-video" src="assets/life-finds-a-way/pass0-organic-veins-m.mp4" poster="assets/life-finds-a-way/pass0-organic-striped-veins.png" loop muted playsinline controls></video>
+              <div class="media-card-caption">
+                <strong>Pass 0: B&amp;W Organic Striped Veins</strong>
+                <span>960×540 · 24fps</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <video class="sync-pass-video" src="assets/life-finds-a-way/pass1-bw-growth-m.mp4" poster="assets/life-finds-a-way/pass1-f225.png" loop muted playsinline controls></video>
+              <div class="media-card-caption">
+                <strong>Pass 1: 3-Act B&amp;W Growth &amp; Mould</strong>
+                <span>240f · 10.0s</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <video class="sync-pass-video" src="assets/life-finds-a-way/pass2-hybrid-biology-flat-m.mp4" poster="assets/life-finds-a-way/pass2-hybrid-strip.png" loop muted playsinline controls></video>
+              <div class="media-card-caption">
+                <strong>Pass 2: Hybrid Cellular Biology (Flat)</strong>
+                <span>Rheinberg + #33ff66</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <video class="sync-pass-video" src="assets/life-finds-a-way/pass3-final-camera-rack-m.mp4" poster="assets/life-finds-a-way/stage3-hybrid-biology-hero.png" loop muted playsinline controls></video>
+              <div class="media-card-caption">
+                <strong>Pass 3: Macro Zoom-Out + Tilted CoC Rack</strong>
+                <span>Ring Bokeh Focus</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-gallery-grid" style="margin-top: 14px;">
+            <div class="media-card">
+              <img src="assets/life-finds-a-way/stage0-path-vs-distorted.png" alt="Stage 0 Path vs Distorted" loading="lazy" />
+              <div class="media-card-caption">
+                <strong>Stage 0: Path vs Curl-Noise &amp; Jig Knobs</strong>
+                <span>1440×810</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <img src="assets/life-finds-a-way/stage1-three-act-growth-strip.png" alt="Stage 1 Three-Act Growth Strip" loading="lazy" />
+              <div class="media-card-caption">
+                <strong>Stage 1: Three-Act Organic Growth Strip</strong>
+                <span>1440×810</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <img src="assets/life-finds-a-way/stage2-3-pass-breakdown.png" alt="Stage 2 4-Pass Breakdown" loading="lazy" />
+              <div class="media-card-caption">
+                <strong>Stage 2: Decoupled 4-Pass Breakdown</strong>
+                <span>1440×810</span>
+              </div>
+            </div>
+            <div class="media-card">
+              <img src="assets/life-finds-a-way/stage3-hybrid-biology-hero.png" alt="Stage 3 Hybrid Biology Hero" loading="lazy" />
+              <div class="media-card-caption">
+                <strong>Stage 3: Hybrid Cellular Biology Hero Still</strong>
+                <span>1440×810</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+
+  <!-- FULLSCREEN PHONE MARKER MODAL FOR WEBCAM TESTING -->
+  <div id="phone-marker-modal" style="display: none; position: fixed; inset: 0; z-index: 9999; background: #ffffff; color: #05070a; flex-direction: column; align-items: center; justify-content: space-between; padding: 18px;">
+    <div style="width: 100%; max-width: 640px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+      <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: #0f172a;">
+        📱 BIOMARKERS PHONE TARGET · HOLD UP TO MAC/PC WEBCAM
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button type="button" id="btn-phone-invert" class="action-btn" style="background: #0f172a; color: #fff; border-color: #334155;">Invert B/W</button>
+        <button type="button" id="btn-close-phone-modal" class="action-btn" style="background: #e11d48; color: #fff; border-color: #be123c;">✕ Exit Fullscreen</button>
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%;">
+      <canvas id="phone-marker-canvas" width="680" height="680" style="width: min(86vw, 76vh); height: min(86vw, 76vh); border-radius: 18px; box-shadow: 0 12px 40px rgba(0,0,0,0.22);"></canvas>
+    </div>
+
+    <div style="width: 100%; max-width: 640px; text-align: center; font-family: var(--font-mono); font-size: 11.5px; color: #334155;">
+      Rotate or tilt your phone in front of the webcam · VisionDial V2 locks onto the dual outer rim + 17 organic vacuoles + 31-bit septa
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
