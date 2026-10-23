@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Living type · reference</title>
+  <meta name="description" content="Living type: organisms and materials grow into typography. Architecture, controls, schema, jigs, pipeline and systems reference." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/index.css" />
+  <style>
+    /* HUDDI-adjacent palette. Docs chrome only: the HUDDI kit itself (Silkscreen 400, cutout state) is separate. */
+    :root {
+      --bg: #0d0d0d; --bg2: #141414; --bg3: #1b1b1b; --ink: #e8e8e8; --mid: #666666; --dim: #333333;
+      --green: #33ff66; --hi: #00ff88; --cream: #f5e6a8; --warn: #ff8800;
+      --theme-color: #33ff66;
+      --base-font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+      --code-font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    }
+    html, body { background: var(--bg); color: var(--ink); }
+    body { font-family: var(--base-font-family); font-size: 15.5px; -webkit-font-smoothing: antialiased; }
+    .sidebar, .sidebar-toggle { background: var(--bg2); border-right: 1px solid var(--dim); }
+    .sidebar ul li a { color: #b8b8b8; font-size: 14px; }
+    .sidebar ul li.active > a { color: var(--green); border-right: 2px solid var(--green); font-weight: 500; }
+    .sidebar ul li a:hover { color: var(--ink); text-decoration: none; }
+    .sidebar > h1 a { color: var(--ink) !important; letter-spacing: .14em; font-family: var(--code-font-family); font-size: 15px; }
+    .sidebar .search input { background: var(--bg3); color: var(--ink); border: 1px solid var(--dim); }
+    .sidebar .search .matching-post { border-bottom: 1px solid var(--dim); }
+    .search .search-keyword { color: var(--green); }
+    .markdown-section { max-width: 980px; color: var(--ink); }
+    .markdown-section h1 { color: var(--ink); border-bottom: 1px solid var(--dim); padding-bottom: .3em; font-weight: 500; }
+    .markdown-section h2 { color: var(--cream); font-weight: 500; margin-top: 2.2em; }
+    .markdown-section h3 { color: var(--ink); font-weight: 500; }
+    .markdown-section h4 { color: #c8c8c8; }
+    .markdown-section a { color: var(--hi); }
+    .markdown-section strong { color: #ffffff; }
+    .markdown-section p, .markdown-section li { color: #d6d6d6; line-height: 1.65; }
+    .markdown-section code { background: var(--bg3); color: var(--cream); font-family: var(--code-font-family); border-radius: 2px; }
+    .markdown-section pre, .markdown-section pre > code { background: #111111 !important; }
+    .markdown-section pre { border: 1px solid var(--dim); }
+    .markdown-section pre > code { color: #dcdcdc; }
+    .markdown-section pre .comment, .markdown-section pre .prolog { color: var(--mid); }
+    .markdown-section pre .string, .markdown-section pre .attr-value { color: var(--cream); }
+    .markdown-section pre .keyword, .markdown-section pre .boolean { color: var(--hi); }
+    .markdown-section pre .number { color: #9fd8ff; }
+    .markdown-section pre .function { color: #ffffff; }
+    .markdown-section table { display: table; width: 100%; font-size: 13.5px; }
+    .markdown-section tr { border-top: 1px solid var(--dim); background: transparent !important; }
+    .markdown-section tr:nth-child(2n) { background: #121212 !important; }
+    .markdown-section td, .markdown-section th { border: 1px solid var(--dim); padding: 6px 10px; vertical-align: top; }
+    .markdown-section th { background: var(--bg3); color: var(--cream); font-weight: 500; }
+    .markdown-section blockquote { border-left: 3px solid var(--green); background: #111a13; color: #d6d6d6; padding: .4em 1em; }
+    .markdown-section blockquote p { color: #d6d6d6; }
+    .markdown-section hr { border-bottom: 1px solid var(--dim); }
+    .markdown-section .tip, .markdown-section p.tip { background: #111a13; border-left: 4px solid var(--green); color: var(--ink); }
+    .markdown-section p.warn { background: #1d150b; border-left: 4px solid var(--warn); color: var(--ink); }
+    .markdown-section .mermaid { background: #111111; border: 1px solid var(--dim); padding: 14px; margin: 1em 0; text-align: center; overflow-x: auto; }
+    .docsify-copy-code-button { background: var(--dim) !important; color: var(--ink) !important; font-family: var(--code-font-family); }
+    section.cover { background: var(--bg) !important; }
+    section.cover h1 { font-family: var(--code-font-family); letter-spacing: .18em; color: var(--ink); font-weight: 400; }
+    section.cover blockquote, section.cover p { color: #bdbdbd; }
+    section.cover .cover-main > p:last-child a { border-color: var(--green); color: var(--green); background: transparent; border-radius: 0; font-family: var(--code-font-family); }
+    section.cover .cover-main > p:last-child a:last-child { background: var(--green); color: var(--bg); }
+    section.cover ul li { color: #bdbdbd; }
+    .app-nav a { color: #b8b8b8; }
+    ::selection { background: var(--green); color: var(--bg); }
+  </style>
+</head>
+<body>
+  <div id="app">Loading living type docs…</div>
+  <script>
+    window.$docsify = {
+      name: 'LIVING TYPE',
+      coverpage: true,
+      onlyCover: false,
+      loadSidebar: true,
+      subMaxLevel: 2,
+      maxLevel: 4,
+      auto2top: true,
+      relativePath: false,
+      homepage: 'README.md',
+      notFoundPage: true,
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No results',
+        depth: 3
+      },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      copyCode: {
+        buttonText: 'copy',
+        errorText: 'error',
+        successText: 'copied'
+      },
+      mermaidConfig: { querySelector: '.mermaid' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      securityLevel: 'loose',
+      fontFamily: 'IBM Plex Sans, sans-serif',
+      themeVariables: {
+        darkMode: true,
+        background: '#111111',
+        primaryColor: '#1b1b1b',
+        primaryTextColor: '#e8e8e8',
+        primaryBorderColor: '#666666',
+        lineColor: '#8a8a8a',
+        secondaryColor: '#141f17',
+        tertiaryColor: '#141414',
+        noteBkgColor: '#2a2616',
+        noteTextColor: '#f5e6a8',
+        noteBorderColor: '#f5e6a8',
+        clusterBkg: '#141414',
+        clusterBorder: '#333333',
+        edgeLabelBackground: '#111111',
+        actorBkg: '#1b1b1b',
+        actorBorder: '#666666',
+        actorTextColor: '#e8e8e8',
+        signalColor: '#e8e8e8',
+        signalTextColor: '#e8e8e8',
+        labelBoxBkgColor: '#1b1b1b',
+        labelTextColor: '#e8e8e8'
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-swift.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+</body>
+</html>
