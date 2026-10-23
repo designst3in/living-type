@@ -1,0 +1,198 @@
+{
+  "benchmark_timestamp_ist": "2026-10-23T23:04:00+05:30",
+  "coordinate_space": "True 3D Volumetric (x, y, z, nx, ny, nz, radius) with z in [-8mm, +8mm]",
+  "species_benchmarks_3d": {
+    "250": {
+      "Species1_ParenchymaBotanica_LIFE_3D": {
+        "default_speed_mult": 0.45,
+        "z_layer_mm": "+3.5 mm (Ventral Canopy)",
+        "cpu_sim_ms_per_frame": 0.157,
+        "web_js_webgl2_ms": 0.498,
+        "macos_metal_compute_ms": 0.09,
+        "effective_cpu_fps": 6370.2,
+        "memory_mb": 1.4
+      },
+      "Species2_VascularHyphae_FINDSA_3D": {
+        "default_speed_mult": 1.35,
+        "z_layer_mm": "0.0 mm (Mid-Atrium Anastomosis)",
+        "cpu_sim_ms_per_frame": 0.145,
+        "web_js_webgl2_ms": 0.566,
+        "macos_metal_compute_ms": 0.12,
+        "effective_cpu_fps": 6913.5,
+        "memory_mb": 1.8
+      },
+      "Species3_PhysarumSwarmRD_WAY_3D": {
+        "default_speed_mult": 2.8,
+        "z_layer_mm": "-3.5 mm (Dorsal Root Foraging Web)",
+        "cpu_sim_ms_per_frame": 0.768,
+        "web_js_webgl2_ms": 1.325,
+        "macos_metal_compute_ms": 0.18,
+        "effective_cpu_fps": 1301.6,
+        "memory_mb": 2.6
+      },
+      "Combined_All_3_Species_Plus_3D_CoC_Lens": {
+        "total_cpu_sim_ms": 1.07,
+        "total_web_webgl2_with_coc_ms": 4.016,
+        "total_macos_metal_with_coc_ms": 0.73,
+        "combined_web_fps": 120.0,
+        "combined_macos_fps": 120.0
+      }
+    },
+    "500": {
+      "Species1_ParenchymaBotanica_LIFE_3D": {
+        "default_speed_mult": 0.45,
+        "z_layer_mm": "+3.5 mm (Ventral Canopy)",
+        "cpu_sim_ms_per_frame": 0.187,
+        "web_js_webgl2_ms": 0.52,
+        "macos_metal_compute_ms": 0.09,
+        "effective_cpu_fps": 5345.2,
+        "memory_mb": 1.4
+      },
+      "Species2_VascularHyphae_FINDSA_3D": {
+        "default_speed_mult": 1.35,
+        "z_layer_mm": "0.0 mm (Mid-Atrium Anastomosis)",
+        "cpu_sim_ms_per_frame": 0.171,
+        "web_js_webgl2_ms": 0.586,
+        "macos_metal_compute_ms": 0.12,
+        "effective_cpu_fps": 5861.6,
+        "memory_mb": 1.8
+      },
+      "Species3_PhysarumSwarmRD_WAY_3D": {
+        "default_speed_mult": 2.8,
+        "z_layer_mm": "-3.5 mm (Dorsal Root Foraging Web)",
+        "cpu_sim_ms_per_frame": 0.756,
+        "web_js_webgl2_ms": 1.315,
+        "macos_metal_compute_ms": 0.18,
+        "effective_cpu_fps": 1322.5,
+        "memory_mb": 2.6
+      },
+      "Combined_All_3_Species_Plus_3D_CoC_Lens": {
+        "total_cpu_sim_ms": 1.114,
+        "total_web_webgl2_with_coc_ms": 4.051,
+        "total_macos_metal_with_coc_ms": 0.73,
+        "combined_web_fps": 120.0,
+        "combined_macos_fps": 120.0
+      }
+    },
+    "1000": {
+      "Species1_ParenchymaBotanica_LIFE_3D": {
+        "default_speed_mult": 0.45,
+        "z_layer_mm": "+3.5 mm (Ventral Canopy)",
+        "cpu_sim_ms_per_frame": 0.199,
+        "web_js_webgl2_ms": 0.529,
+        "macos_metal_compute_ms": 0.09,
+        "effective_cpu_fps": 5028.9,
+        "memory_mb": 1.4
+      },
+      "Species2_VascularHyphae_FINDSA_3D": {
+        "default_speed_mult": 1.35,
+        "z_layer_mm": "0.0 mm (Mid-Atrium Anastomosis)",
+        "cpu_sim_ms_per_frame": 0.308,
+        "web_js_webgl2_ms": 0.697,
+        "macos_metal_compute_ms": 0.12,
+        "effective_cpu_fps": 3245.2,
+        "memory_mb": 1.8
+      },
+      "Species3_PhysarumSwarmRD_WAY_3D": {
+        "default_speed_mult": 2.8,
+        "z_layer_mm": "-3.5 mm (Dorsal Root Foraging Web)",
+        "cpu_sim_ms_per_frame": 0.85,
+        "web_js_webgl2_ms": 1.394,
+        "macos_metal_compute_ms": 0.18,
+        "effective_cpu_fps": 1176.6,
+        "memory_mb": 2.6
+      },
+      "Combined_All_3_Species_Plus_3D_CoC_Lens": {
+        "total_cpu_sim_ms": 1.357,
+        "total_web_webgl2_with_coc_ms": 4.246,
+        "total_macos_metal_with_coc_ms": 0.73,
+        "combined_web_fps": 120.0,
+        "combined_macos_fps": 120.0
+      }
+    },
+    "2500": {
+      "Species1_ParenchymaBotanica_LIFE_3D": {
+        "default_speed_mult": 0.45,
+        "z_layer_mm": "+3.5 mm (Ventral Canopy)",
+        "cpu_sim_ms_per_frame": 0.28,
+        "web_js_webgl2_ms": 0.59,
+        "macos_metal_compute_ms": 0.09,
+        "effective_cpu_fps": 3565.5,
+        "memory_mb": 1.4
+      },
+      "Species2_VascularHyphae_FINDSA_3D": {
+        "default_speed_mult": 1.35,
+        "z_layer_mm": "0.0 mm (Mid-Atrium Anastomosis)",
+        "cpu_sim_ms_per_frame": 1.251,
+        "web_js_webgl2_ms": 1.451,
+        "macos_metal_compute_ms": 0.125,
+        "effective_cpu_fps": 799.2,
+        "memory_mb": 1.8
+      },
+      "Species3_PhysarumSwarmRD_WAY_3D": {
+        "default_speed_mult": 2.8,
+        "z_layer_mm": "-3.5 mm (Dorsal Root Foraging Web)",
+        "cpu_sim_ms_per_frame": 1.081,
+        "web_js_webgl2_ms": 1.588,
+        "macos_metal_compute_ms": 0.18,
+        "effective_cpu_fps": 924.8,
+        "memory_mb": 2.6
+      },
+      "Combined_All_3_Species_Plus_3D_CoC_Lens": {
+        "total_cpu_sim_ms": 2.613,
+        "total_web_webgl2_with_coc_ms": 5.25,
+        "total_macos_metal_with_coc_ms": 0.73,
+        "combined_web_fps": 120.0,
+        "combined_macos_fps": 120.0
+      }
+    }
+  },
+  "under_structure_benchmarks_3d": {
+    "250": {
+      "ModeA_3DVoronoiTruss_build_ms": 2.919,
+      "ModeA_3DVoronoiTruss_step_ms": 0.019,
+      "ModeB_3DLaguerreSpherePack_step_ms": 0.103,
+      "ModeC_3DXPBDTubularInflate_step_ms": 0.028,
+      "ModeD_3DDifferentialGrowth_step_ms": 0.012,
+      "ModeE_3DHandSplineExtrude_step_ms": 0.015,
+      "Mode3B_3DSprayAndStickMedia_step_ms": 0.206
+    },
+    "500": {
+      "ModeA_3DVoronoiTruss_build_ms": 5.054,
+      "ModeA_3DVoronoiTruss_step_ms": 0.028,
+      "ModeB_3DLaguerreSpherePack_step_ms": 0.201,
+      "ModeC_3DXPBDTubularInflate_step_ms": 0.039,
+      "ModeD_3DDifferentialGrowth_step_ms": 0.016,
+      "ModeE_3DHandSplineExtrude_step_ms": 0.016,
+      "Mode3B_3DSprayAndStickMedia_step_ms": 0.365
+    },
+    "1000": {
+      "ModeA_3DVoronoiTruss_build_ms": 10.832,
+      "ModeA_3DVoronoiTruss_step_ms": 0.039,
+      "ModeB_3DLaguerreSpherePack_step_ms": 0.562,
+      "ModeC_3DXPBDTubularInflate_step_ms": 0.057,
+      "ModeD_3DDifferentialGrowth_step_ms": 0.027,
+      "ModeE_3DHandSplineExtrude_step_ms": 0.018,
+      "Mode3B_3DSprayAndStickMedia_step_ms": 0.793
+    },
+    "2500": {
+      "ModeA_3DVoronoiTruss_build_ms": 33.604,
+      "ModeA_3DVoronoiTruss_step_ms": 0.074,
+      "ModeB_3DLaguerreSpherePack_step_ms": 2.387,
+      "ModeC_3DXPBDTubularInflate_step_ms": 0.124,
+      "ModeD_3DDifferentialGrowth_step_ms": 0.062,
+      "ModeE_3DHandSplineExtrude_step_ms": 0.025,
+      "Mode3B_3DSprayAndStickMedia_step_ms": 2.162
+    }
+  },
+  "coc_microscope_lens_benchmarks": {
+    "Signed_Scheimpflug_CoC_Map_eval_ms": 0.419,
+    "Fast_6Level_MIP_CoC_CPU_ms": 18.31,
+    "GraphicsLab_8Level_RingBokeh_FFT_CPU_ms": 20.28,
+    "WebGL2_MIP_16TapPoisson_8TapRing_GPU_ms": 1.65,
+    "macOS_Metal_Compute_RingBokeh_LoCA_GPU_ms": 0.34,
+    "Naive_PerPixel_DiskGather_Reference_ms": 38400.0,
+    "Speedup_Metal_vs_Naive": "112,940x",
+    "Speedup_WebGL2_vs_Naive": "23,270x"
+  }
+}
